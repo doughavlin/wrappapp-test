@@ -19,6 +19,16 @@ class Flyer extends Model
 		'description'
 	];
 	
+	public function scopeLocatedAt ($query , $zip , $street ){
+				$street = str_replace ('-',' ',$street);
+
+		return $query -> where ( compact ( 'zip' , 'street' ) );
+	}
+	
+	public function getPriceAttribute($price){
+		
+		return '$'.number_format($price);
+	}
 	
     public function photos()
 	{
