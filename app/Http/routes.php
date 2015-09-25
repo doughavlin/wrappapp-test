@@ -4,6 +4,9 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
+Route::get('/dynfield', function () {
+    return view('pages.dynfield');
+});
 
 Route::resource('flyers','FlyersController');
 
